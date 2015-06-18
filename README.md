@@ -36,7 +36,7 @@ This section changes the values of activity that were previously labeled as numb
 
 ## Simplifying the Data
 
-This section is reliant on the package dplyr being installed. This part takes the large, somewhat unruly data frame and takes the mean of each subject while doing each activity, and then does the same with standard deviation. To keep the column names different from each other, I renamed them by adding mean or sd to the end of it's previous name to show it's purpose. Using the inner_join() function, I was then able to put the two data frames (temp and temp2) back into the analysis data frame, making it a wide data frame.
+This section is reliant on the package dplyr being installed. First using the select() function I was able to take out any column variables that didn't have to do with the mean or standard deviation of a variable. Next, using the summarise() function I took the mean of each variable based on the subject and the activity they were doing to make our data set clean and concise. 
 
 ## Finally, Writing Our Tidy Data Set
 
