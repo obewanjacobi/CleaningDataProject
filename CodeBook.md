@@ -29,4 +29,3 @@ label - some label made by the Samsung data analysts to reflect the measure foun
 "#" - the number of the column from 1 to 561
 
 mean() or std() - character string telling whether the data is the mean or standard deviation of that measurement
-
