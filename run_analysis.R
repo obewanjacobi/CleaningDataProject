@@ -51,16 +51,11 @@ analysis$activity <- mapvalues(analysis$activity, c(1:6),
 
 ## simplifying the data
 
-temp <- analysis %>% group_by(subject,activity) %>%
+analysis <- select(analysis, subject, activity, contains("mean()"), 
+                   contains("std()"))
+
+analysis <- analysis %>% group_by(subject,activity) %>%
 summarise_each(funs(mean))
-
-temp2 <- analysis %>% group_by(subject,activity) %>%
-  summarise_each(funs(sd))
-
-names(temp)[3:563] <- paste(names(temp)[3:563], 'mean')
-names(temp2)[3:563] <- paste(names(temp2)[3:563], 'sd')
-
-analysis <- inner_join(temp, temp2)
 
 ## Finally, writing our tidy data set
 
